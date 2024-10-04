@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>오픈소스 수도권 지하철 노선도</title>
+  </head>
+  <style>
+    .mapImage {
+      transform-origin: top left;
+      transition: transform 0.3s;
+    }
+    .map-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .subway-map {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div class="map-wrap">
+        <div
+          class="subway-map"
+          data-columns="305"
+          data-legendid="legend"
+          data-rows="200"
+          data-cellsize="5"
+          data-textclass="text"
+          data-linewidth="3"
+          style="width: 100%; height: 100%"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            aria-hidden="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 2440 1600"
+              width="100%"
+            >
+              <path
+                d="M 65 305 H 370 V 430 H 500 L 850 780 H 940 V 888 H 1480 L 1560 808 H 1830 L 1910 888 H 2010 L 2090 808 V 620 H 2300 M 940 860 H 850 L 730 740 H 800"
+                fill="none"
+                stroke="#d3effb"
+                stroke-width="23"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </svg>
+          <div id="select-panel">
+            <div class="name-bar">
+              <span class="name"></span> <span class="icon"></span>
+            </div>
+            <div class="button-bar">
+              <button class="button-start">출발</button>
+              <button class="button-stop">경유</button>
+              <button class="button-end">도착</button>
+              <button class="button-time">시간표</button>
+              <button class="button-info">역정보</button>
+            </div>
+            <div class="dummy"></div>
+          </div>
+          <div class="mapNavigateWrap">
+            <a href="#" class="plus" title="지하철노선도 확대"></a>
+            <a href="#" class="minus" title="지하철노선도 축소"></a>
+            <a href="#" class="top" title="지하철노선도 위로 이동"></a>
+            <a href="#" class="left" title="지하철노선도 좌측으로 이동"></a>
+            <a href="#" class="right" title="지하철노선도 우측으로 이동"></a>
+            <a href="#" class="bottom" title="지하철노선도 아래로 이동"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script src="./subway.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
